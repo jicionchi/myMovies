@@ -1,0 +1,10 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_separator_height"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/item_separator_padding"
+        android:layout_marginRight="@dimen/item_separator_padding"
+        android:background="@color/colorAccent" />
+</merge>
