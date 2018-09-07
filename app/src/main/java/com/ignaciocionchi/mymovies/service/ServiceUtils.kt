@@ -20,7 +20,7 @@ object ServiceUtils {
 
     private fun getClient(): OkHttpClient {
 
-        val httpCacheDirectory = File(MoviesApp.instance.getCacheDir(), CACHE_CHILD)
+        val httpCacheDirectory = File(MoviesApp.instance.cacheDir, CACHE_CHILD)
         val cache = Cache(httpCacheDirectory, BuildConfig.CACHE_SIZE)
 
         return OkHttpClient.Builder()
