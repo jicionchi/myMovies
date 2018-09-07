@@ -5,7 +5,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import java.util.*
 
-open class DetailMovieModel(val moveId: Long, val movieService: MovieService) {
+class DetailMovieModel(val moveId: Long, val movieService: MovieService) {
     companion object {
         const val VIDEOS = "videos"
     }
@@ -13,5 +13,4 @@ open class DetailMovieModel(val moveId: Long, val movieService: MovieService) {
     fun getDetailMovieById() = movieService.getDetailMovieById(Locale.getDefault().language, moveId, VIDEOS)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())!!
-
 }

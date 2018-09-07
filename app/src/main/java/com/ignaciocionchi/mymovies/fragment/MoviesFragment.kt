@@ -11,7 +11,7 @@ import com.ignaciocionchi.mymovies.mvp.presenter.MoviesPresenter
 import com.ignaciocionchi.mymovies.mvp.view.MoviesView
 import com.ignaciocionchi.mymovies.service.MovieServiceImpl
 
-open class MoviesFragment() : android.support.v4.app.Fragment() {
+class MoviesFragment() : android.support.v4.app.Fragment() {
 
     companion object {
         const val TYPE_MOVIE = "MoviesFragment.typeMovie"

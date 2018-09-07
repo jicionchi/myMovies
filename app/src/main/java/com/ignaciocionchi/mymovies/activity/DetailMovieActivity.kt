@@ -17,10 +17,10 @@ class DetailMovieActivity : AppCompatActivity() {
         const val INTENT_MOVE_ID = "INTENT_MOVE_ID"
         fun newIntent(moveId: Long, activity: Activity) =
                 Intent(activity, DetailMovieActivity::class.java)
-                        .putExtra(INTENT_MOVE_ID, moveId)
+                        .putExtra(INTENT_MOVE_ID, moveId)!!
     }
 
-    lateinit var presenter: DetailMoviePresenter
+    private lateinit var presenter: DetailMoviePresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

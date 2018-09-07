@@ -31,7 +31,6 @@ open class DetailMovieView(activity: DetailMovieActivity) : ActivityView<DetailM
         val activity = getActivity() ?: return
         activity.setSupportActionBar(activity.detail_toolbar)
         activity.supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
     }
 
     fun hideLoading() {
@@ -72,11 +71,7 @@ open class DetailMovieView(activity: DetailMovieActivity) : ActivityView<DetailM
                     override fun onBitmapLoaded(bitmap: Bitmap?, from: Picasso.LoadedFrom?) {
                         getActivity()?.toolbar_layout?.background = BitmapDrawable(getActivity()?.resources, bitmap)
                     }
-
                 })
-
-
-
         if (detail.videos.isEmpty()) {
             return
         }
@@ -92,10 +87,9 @@ open class DetailMovieView(activity: DetailMovieActivity) : ActivityView<DetailM
         youtubeFragment.initialize(BuildConfig.API_YOUTUBE_KEY, object : YouTubePlayer.OnInitializedListener {
             override fun onInitializationSuccess(provider: YouTubePlayer.Provider?, youTubePlayer: YouTubePlayer?, b: Boolean) {
                 youTubePlayer?.cueVideo(key);
-
             }
 
-            override fun onInitializationFailure(p0: YouTubePlayer.Provider?, p1: YouTubeInitializationResult?) {
+            override fun onInitializationFailure(provider: YouTubePlayer.Provider?, p1: YouTubeInitializationResult?) {
             }
         })
     }

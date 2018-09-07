@@ -9,7 +9,7 @@ import com.ignaciocionchi.mymovies.bus.observer.LoadMoreMoviesBusOserver.LoadMor
 import com.ignaciocionchi.mymovies.domain.Movie
 import com.ignaciocionchi.mymovies.fragment.MoviesFragment
 
-open class MoviesView(fragment: MoviesFragment) : FragmentView<MoviesFragment>(fragment) {
+class MoviesView(fragment: MoviesFragment) : FragmentView<MoviesFragment>(fragment) {
     lateinit var recyclerView: RecyclerView
     lateinit var adapter: MoviesAdapter
 
@@ -19,12 +19,11 @@ open class MoviesView(fragment: MoviesFragment) : FragmentView<MoviesFragment>(f
         recyclerView = activity.findViewById<RecyclerView>(R.id.movies_recycler)!!
         val linearLayoutManager = LinearLayoutManager(activity)
         linearLayoutManager.orientation = LinearLayoutManager.VERTICAL
-        
+
         recyclerView.layoutManager = linearLayoutManager
 
-        adapter = MoviesAdapter()
+        adapter = MoviesAdapter(true)
         recyclerView.adapter = adapter
-
 
         //pagination
         recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {

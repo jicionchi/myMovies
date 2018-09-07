@@ -4,9 +4,8 @@ import com.ignaciocionchi.mymovies.mvp.model.DetailMovieModel
 import com.ignaciocionchi.mymovies.mvp.view.DetailMovieView
 import io.reactivex.disposables.Disposable
 
-open class DetailMoviePresenter(val view: DetailMovieView, val model: DetailMovieModel) {
+class DetailMoviePresenter(val view: DetailMovieView, val model: DetailMovieModel) {
     private lateinit var disposable: Disposable
-
 
     init {
         view.init()

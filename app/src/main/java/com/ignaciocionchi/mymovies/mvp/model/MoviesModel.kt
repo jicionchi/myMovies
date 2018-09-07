@@ -7,7 +7,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import java.util.*
 
-open class MoviesModel(val type: String, val movieService: MovieService) {
+class MoviesModel(val type: String, val movieService: MovieService) {
 
     var page: Int = BuildConfig.DEFAULT_PAGE
 

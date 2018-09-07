@@ -4,10 +4,13 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="nav_search">Search</string>
-    <string name="nav_top">Top Movies</string>
+    <string name="nav_search">Search Offline</string>
+    <string name="nav_top">Top Rated Movies</string>
     <string name="nav_popular">Popular Movies</string>
     <string name="nav_upcoming">Upcoming Movies</string>
+
+    <string name="search_button">Search</string>
+    <string name="search_query">Query to Search</string>
 
 
     <string name="empty" translatable="false"></string>

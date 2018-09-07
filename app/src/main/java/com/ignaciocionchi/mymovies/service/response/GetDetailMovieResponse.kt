@@ -3,7 +3,7 @@ package com.ignaciocionchi.mymovies.service.response
 import com.squareup.moshi.Json
 
 data class GetDetailMovieResponse(
-        @Json(name = "poster_path") val posterPath: String,
+        @Json(name = "poster_path") val posterPath: String?,
         val adult: Boolean,
         val overview: String,
         @Json(name = "release_date") val releaseDate: String,
@@ -12,8 +12,8 @@ data class GetDetailMovieResponse(
         @Json(name = "original_title") val originalTitle: String,
         @Json(name = "original_language") val originalLanguage: String,
         val title: String,
-        val homepage: String,
-        @Json(name = "backdrop_path") val backdropPath: String,
+        val homepage: String?,
+        @Json(name = "backdrop_path") val backdropPath: String?,
         val popularity: Double,
         @Json(name = "vote_count") val voteCount: Long,
         val videos: VideosResponse,

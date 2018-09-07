@@ -1,6 +1,8 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'realm-android'
+
 
 android {
     compileSdkVersion 26
@@ -10,7 +12,6 @@ android {
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
-//        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
 
         def STRING = "String"
@@ -24,15 +25,19 @@ android {
         def DEFAULT_LANG = "DEFAULT_LANG"
         def READ_TIMEOUT = "READ_TIMEOUT"
         def CONNECT_TIMEOUT = "CONNECT_TIMEOUT"
+        def BD_NAME = "BD_NAME"
+        def CACHE_SIZE = "CACHE_SIZE"
 
         buildConfigField STRING, API_URL, "\"https://api.themoviedb.org/3/\""
         buildConfigField STRING, API_KEY, "\"6b46c5cd9d0e837c13250b740cb13e8d\""
         buildConfigField STRING, API_BASE_URL_IMAGE, "\"https://image.tmdb.org/t/p/w500\""
+        buildConfigField STRING, BD_NAME, "\"mymoviesdb\""
 
         buildConfigField INTEGER, DEFAULT_PAGE, "1"
         buildConfigField STRING, DEFAULT_LANG, "\"en_ES\""
         buildConfigField LONG, READ_TIMEOUT, "10"
         buildConfigField LONG, CONNECT_TIMEOUT, "10"
+        buildConfigField LONG, CACHE_SIZE, "10485760"
 
         buildConfigField STRING, API_YOUTUBE_KEY, "\"AIzaSyDzYKk0FsXVB7gxP55WjXQ0uATBu-zKWSY\""
 
@@ -73,6 +78,4 @@ dependencies {
     compile files('libs/YouTubeAndroidPlayerApi.jar')
 
     testImplementation 'junit:junit:4.12'
-//    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-//    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }

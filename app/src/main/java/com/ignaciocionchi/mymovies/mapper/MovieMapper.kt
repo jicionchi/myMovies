@@ -1,9 +1,11 @@
 package com.ignaciocionchi.mymovies.mapper
 
 import com.ignaciocionchi.mymovies.domain.*
+import com.ignaciocionchi.mymovies.repository.entity.MovieEntity
 import com.ignaciocionchi.mymovies.service.response.*
+import io.realm.RealmResults
 
-class MovieMapper {
+object MovieMapper {
 
     fun transform(response: GetMoviesResponse): GetMovies {
         var getMovies = GetMovies(response.page,
@@ -15,7 +17,6 @@ class MovieMapper {
 
         return getMovies
     }
-
 
     private fun transform(moviesResponse: List<MovieResponse>): List<Movie> {
         var listOfMovies = mutableListOf<Movie>()
@@ -41,7 +42,6 @@ class MovieMapper {
         }
         return listOfMovies
     }
-
 
     fun transform(response: GetDetailMovieResponse): DetailMovie {
         var movie = DetailMovie(response.posterPath,
@@ -115,5 +115,56 @@ class MovieMapper {
 
         }
         return listOfVideo
+    }
+
+
+    fun transformEntities(movies: List<Movie>): List<MovieEntity> {
+        var listOfMovies = mutableListOf<MovieEntity>()
+        for (movie in movies) {
+            var movieEntity = MovieEntity(movie.posterPath,
+                    movie.adult,
+                    movie.overview,
+                    movie.releaseDate,
+//                    movie.genreIds,
+                    movie.id,
+                    movie.originalTitle,
+                    movie.originalLanguage,
+                    movie.title,
+                    movie.backdropPath,
+                    movie.popularity,
+                    movie.voteCount,
+                    movie.video,
+                    movie.voteAverage
+            )
+
+            listOfMovies.add(movieEntity)
+
+        }
+        return listOfMovies
+    }
+
+    fun transformEntities(movies: RealmResults<MovieEntity>): List<Movie> {
+        var listOfMovies = mutableListOf<Movie>()
+        for (movieEntity in movies) {
+            var movie = Movie(movieEntity.posterPath,
+                    movieEntity.adult,
+                    movieEntity.overview,
+                    movieEntity.releaseDate,
+                    null,
+                    movieEntity.id,
+                    movieEntity.originalTitle,
+                    movieEntity.originalLanguage,
+                    movieEntity.title,
+                    movieEntity.backdropPath,
+                    movieEntity.popularity,
+                    movieEntity.voteCount,
+                    movieEntity.video,
+                    movieEntity.voteAverage
+            )
+
+            listOfMovies.add(movie)
+
+        }
+        return listOfMovies
     }
 }

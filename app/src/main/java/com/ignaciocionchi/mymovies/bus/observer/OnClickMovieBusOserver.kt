@@ -4,5 +4,4 @@ abstract class OnClickMovieBusOserver : BusObserver<OnClickMovieBusOserver.OnCli
 (OnClickMovie::class.java) {
 
     class OnClickMovie(val moveId: Long)
-
 }

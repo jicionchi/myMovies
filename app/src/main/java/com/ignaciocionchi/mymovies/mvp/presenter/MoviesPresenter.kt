@@ -9,14 +9,12 @@ import com.ignaciocionchi.mymovies.bus.observer.OnClickMovieBusOserver
 import com.ignaciocionchi.mymovies.mvp.model.MoviesModel
 import com.ignaciocionchi.mymovies.mvp.view.MoviesView
 
-open class MoviesPresenter(val view: MoviesView, val model: MoviesModel) {
-
+class MoviesPresenter(val view: MoviesView, val model: MoviesModel) {
 
     init {
         view.init()
         getMovies(BuildConfig.DEFAULT_PAGE)
     }
-
 
     fun subscribe() {
         RxBus.subscribe(this, object : LoadMoreMoviesBusOserver() {
@@ -73,7 +71,6 @@ open class MoviesPresenter(val view: MoviesView, val model: MoviesModel) {
                             view.addItems(ArrayList())
                             println(error.message)
                         })
-
     }
 
     private fun getTopMovies(page: Int) {
@@ -91,7 +88,6 @@ open class MoviesPresenter(val view: MoviesView, val model: MoviesModel) {
                             view.addItems(ArrayList())
                             println(error.message)
                         })
-
     }
 
     private fun getUpcomingMovies(page: Int) {
@@ -109,7 +105,5 @@ open class MoviesPresenter(val view: MoviesView, val model: MoviesModel) {
                             view.addItems(ArrayList())
                             println(error.message)
                         })
-
     }
-
 }
